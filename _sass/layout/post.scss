@@ -415,3 +415,8 @@ h1 + .post-meta {
     border-radius: 0;
   }
 }
+
+/* fix rtl for code snnip */
+.highlighter-rouge{
+  direction: ltr;
+}

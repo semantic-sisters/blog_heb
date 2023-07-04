@@ -10,8 +10,10 @@ tail_includes:
 ---
 
 {% include lang.html %}
+<div dir="rtl" >
+  
+<h1 dir="rtl" data-toc-skip>{{ page.title }}</h1>
 
-<h1 data-toc-skip>{{ page.title }}</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -48,28 +50,6 @@ tail_includes:
   {% endif %}
 
   <div class="d-flex justify-content-between">
-    <!-- author(s) -->
-    <span>
-      {% if page.author %}
-        {% assign authors = page.author %}
-      {% elsif page.authors %}
-        {% assign authors = page.authors %}
-      {% endif %}
-
-      {{ site.data.locales[lang].post.written_by }}
-
-      <em>
-      {% if authors %}
-        {% for author in authors %}
-          <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
-          {% unless forloop.last %}</em>, <em>{% endunless %}
-        {% endfor %}
-      {% else %}
-        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
-      {% endif %}
-      </em>
-    </span>
-
     <div>
       <!-- read time -->
       {% include read-time.html content=content prompt=true lang=lang %}
@@ -129,3 +109,4 @@ tail_includes:
   </div><!-- .post-tail-bottom -->
 
 </div><!-- div.post-tail-wrapper -->
+</div>
